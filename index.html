@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ONEWORLD | Turn Ideas Into Products</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#080d1b;color:white;font-family:Arial,sans-serif}
+header{padding:22px 7%;border-bottom:1px solid #26334d}
+.logo{font-size:27px;font-weight:bold;color:#65e6d1}
+main{max-width:850px;margin:65px auto;padding:20px;text-align:center}
+h1{font-size:clamp(36px,8vw,65px);margin-bottom:12px}
+h1 span{color:#65e6d1}
+p{color:#b8c4d9;line-height:1.7}
+.panel{background:#121c30;border:1px solid #30405e;border-radius:18px;padding:24px;margin-top:30px;text-align:left}
+label{display:block;margin:16px 0 8px}
+input,textarea{width:100%;padding:14px;border-radius:9px;border:1px solid #43516c;background:#080f20;color:white;font-size:16px}
+textarea{min-height:100px}
+button{margin-top:20px;padding:14px 22px;border:0;border-radius:9px;background:#65e6d1;color:#07121b;font-weight:bold;font-size:16px;width:100%}
+#result{white-space:pre-wrap;color:#d5e6f5;line-height:1.7}
+footer{padding:30px;text-align:center;color:#8290a8}
+</style>
+</head>
+<body>
+<header><div class="logo">ONEWORLD 🌍</div></header>
+<main>
+<h1>Turn Ideas <span>Into Products.</span></h1>
+<p>Every great product begins with an idea. Tell us yours and start planning its future.</p>
+<div class="panel">
+<h2>Build Your Idea</h2>
+<label>Your idea</label>
+<textarea id="idea" placeholder="Describe your new idea..."></textarea>
+<label>Who will use it?</label>
+<input id="users" placeholder="Example: Students, creators, everyone">
+<label>What problem will it solve?</label>
+<textarea id="problem" placeholder="Describe the problem..."></textarea>
+<button onclick="makePlan()">Create My Product Plan</button>
+<h2>Your Product Plan</h2>
+<div id="result">Your plan will appear here.</div>
+</div>
+</main>
+<footer>ONEWORLD © 2026 — Ideas Can Change The World.</footer>
+<script>
+function makePlan(){
+let idea=document.getElementById('idea').value.trim();
+let users=document.getElementById('users').value.trim();
+let problem=document.getElementById('problem').value.trim();
+if(!idea){alert('Please enter your idea first.');return;}
+document.getElementById('result').textContent=
+'YOUR IDEA: '+idea+
+'\n\nTARGET USERS: '+(users||'To be decided')+
+'\n\nPROBLEM: '+(problem||'To be researched')+
+'\n\nFIRST STEPS:\n1. Talk to 5 possible users.\n2. Understand what they need.\n3. Design a simple first version.\n4. Test it and improve it.\n\nONEWORLD: Your idea, your next step!';
+}
+</script>
+</body>
+</html>
